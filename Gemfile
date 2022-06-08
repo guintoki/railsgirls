@@ -17,6 +17,12 @@ group :production do
   gem 'pg'
 end
 gem 'carrierwave'
+gem 'mini_magick'
+
+
+# Use devise for authentication
+gem 'devise'
+gem 'gravtastic'
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
@@ -75,4 +81,11 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+end
+
+group :development, :test do
+  %w[rspec-core rspec-expectations rspec-mocks rspec-rails rspec-support].each do |lib|
+    gem lib, git: "https://github.com/rspec/#{lib}.git", branch: 'main'
+  end
+  gem 'pry-rails'
 end

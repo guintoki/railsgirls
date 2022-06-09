@@ -23,8 +23,7 @@ class IdeasController < ApplicationController
 
   # POST /ideas or /ideas.json
   def create
-    binding.pry
-    @idea = Idea.new(idea_params)
+   @idea = Idea.new(idea_params)
 
     respond_to do |format|
       if @idea.save

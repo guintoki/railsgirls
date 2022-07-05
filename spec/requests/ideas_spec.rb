@@ -19,7 +19,7 @@ RSpec.describe IdeasController, type: :request  do
     # end
 
     context "/get" do
-      it "get ideas" do
+      it "get ideas list" do
         get "/ideas"
         expect(response).to have_http_status(:found)
       end

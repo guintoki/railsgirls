@@ -1,0 +1,20 @@
+language: 
+ — ruby
+rvm:
+ — 2.5.0
+cache:
+ — bundler
+script:
+ — bundle install
+ — bin/rails db:create
+ — bin/rails db:migrate
+ — bundle exec rspec
+services:
+ — postgresql# deployment details - add while setting up Heroku 
+deploy:
+  provider: heroku
+ api_key:
+  secure: cwbLEvxUZES7Q4GH0VZwrZBrcmwnBD1Fjyd0GAtEY8AbE+ee7kuQv4PnqG3aZWGQrGLs+57mSp40BTfeFU8mBc1dJprUIEzYhTKcsyGA4+0F4kGI3slbXNYqRp/8hM8eoBcUmW7lktXKrRzLmsHOOkA/db85w6PagYNbx+CYFpxlCreKd1c/Lp5MenHJZuUOcezxzOBJieG/1xv1ZY53UcUrY37BgysoKhJEdxfdz+oCRQFT0XwEw6qGHNAfeMtY5CEab4n5eutxwamsRUasGOsG0lJ+hVoocbD22Ouv+BznCTkf3Zjwb+R5t3+GbtD6BzoFRAvtzHF7e0S+oR1HA0OzvjIq8BcW62tOKxhS+CxI0k3uDM6DgSlX9LxdJrB+SRkQ1z81K7kQE9p95hFqV+XYdcDwUxboX3vuh9UKaVS4qhPyDn+ipVt1r5qFkLQOuYUMr3fq+2GBGOZux+T6rU+1vZ0ybhpfQa8iT5ztAb/yFp+WCZN7JkBevqs6Nyko/81fLlWpzmjSL0r5uOggZvAnWwkob4lDskgY99o2BqBpjJ4TzkXDsh5leAM4N/EOl+yjPCcx7AUvgRYj2NzCFeK1FGyFlyaoj+SkGSj9TRVD8oo4v07hYk0N9LY4cDLKH6NgQ6/JGDpHbwV1T2XoT8veuqvUJqSy0KNRZXu3Jmk=
+app: railsgirls
+  on:
+ repo: guintoki/railsgirls

@@ -20,6 +20,11 @@ gem 'carrierwave'
 gem 'mini_magick'
 
 
+gem 'activeadmin'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+
+gem 'sass-rails'
+
 # Use devise for authentication
 gem 'devise'
 gem 'gravtastic'
